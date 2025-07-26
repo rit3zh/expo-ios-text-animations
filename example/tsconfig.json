@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-ios-text-animations": ["../src/index"],
+      "expo-ios-text-animations/*": ["../src/*"]
+    }
+  }
+}
