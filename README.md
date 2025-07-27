@@ -1,5 +1,7 @@
 # 📱 expo-ios-text-animations
 
+https://github.com/user-attachments/assets/c5080829-a970-4f23-a32f-a0be5ceb913c
+
 Beautiful, native SwiftUI-powered animated text component for **React Native (Expo)** apps.
 Supports a variety of animation styles like typing, drop, blur, twist, slide, and more!
 
