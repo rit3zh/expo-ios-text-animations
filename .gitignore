@@ -57,3 +57,4 @@ yarn-error.log
 
 # Expo
 .expo/*
+package-lock.json
