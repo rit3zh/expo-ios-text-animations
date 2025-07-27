@@ -14,8 +14,6 @@ Supports a variety of animation styles like typing, drop, blur, twist, slide, an
 
 ## 📦 Installation
 
-> This package **requires a custom dev client** built with EAS.
-
 ### 1. Add the package
 
 ```bash
