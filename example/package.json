@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "expo": "~53.0.20",
+    "expo-symbols": "^0.4.5",
     "react": "19.0.0",
     "react-native": "0.79.5"
   },

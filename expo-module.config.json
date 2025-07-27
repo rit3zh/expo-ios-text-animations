@@ -1,9 +1,6 @@
 {
-  "platforms": ["apple", "android", "web"],
+  "platforms": ["apple", "web"],
   "apple": {
     "modules": ["NativeiOSTextAnimationsExpoModule"]
-  },
-  "android": {
-    "modules": ["expo.modules.iostextanimations.NativeiOSTextAnimationsExpoModule"]
   }
 }
