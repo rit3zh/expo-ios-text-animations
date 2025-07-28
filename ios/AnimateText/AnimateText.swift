@@ -1,8 +1,8 @@
 import SwiftUI
 
-/// A view that animates binding text with true pause/resume capability
+
 public struct AnimateText<E: ATTextAnimateEffect>: View {
-    
+
     @Binding private var text: String
     var type: ATUnitType = .letters
     var userInfo: Any? = nil
@@ -10,23 +10,23 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
     var fontSize: Double? = 16.0
     var textColor: Color = .black
     var animationDuration: Double = 2.0
-    
-    
+
+
     @State private var elements: Array<String> = []
     @State private var value: Double = 0
     @State private var toggle: Bool = false
     @State private var isChanged: Bool = false
-    
+
     @State private var size: CGSize = .zero
-    
-    // Pause/Resume tracking
+
+
     @State private var animationStartTime: Date?
     @State private var pausedAtValue: Double = 0
     @State private var totalPausedDuration: TimeInterval = 0
     @State private var lastPauseTime: Date?
-    
-//    private let animationDuration: Double = 2.0 // Adjust as needed
-    
+
+
+
     public init(_ text: Binding<String>, type: ATUnitType = .letters, userInfo: Any? = nil, animating: Bool = false, fontSize: Double = 16.0, textColor: Color = .black, animationDuration: Double = 2.0) {
         _text = text
         self.type = type
@@ -36,7 +36,7 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
         self.textColor = textColor
         self.animationDuration = animationDuration
     }
-    
+
     public var body: some View {
         ZStack(alignment: .leading) {
             if !isChanged {
@@ -68,7 +68,7 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
             getText(text)
             toggle.toggle()
             self.isChanged = true
-            
+
             if animating {
                 startAnimation()
             }
@@ -81,7 +81,7 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
             }
         }
     }
-    
+
     private func resetAnimation() {
         value = 0
         pausedAtValue = 0
@@ -89,41 +89,41 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
         animationStartTime = nil
         lastPauseTime = nil
     }
-    
+
     private func startAnimation() {
         animationStartTime = Date()
         let remainingDuration = animationDuration * (1.0 - pausedAtValue)
-        
+
         withAnimation(.easeInOut(duration: remainingDuration)) {
             value = 1.0
         }
     }
-    
+
     private func resumeAnimation() {
         guard isChanged else { return }
-        
+
         if let lastPause = lastPauseTime {
             totalPausedDuration += Date().timeIntervalSince(lastPause)
         }
-        
+
         startAnimation()
     }
-    
+
     private func pauseAnimation() {
         lastPauseTime = Date()
-        
-        // Calculate current progress
+
+
         if let startTime = animationStartTime {
             let elapsed = Date().timeIntervalSince(startTime) - totalPausedDuration
             pausedAtValue = min(elapsed / animationDuration, 1.0)
-            
-            // Force update the value to current position
+
+
             withAnimation(.none) {
                 value = pausedAtValue
             }
         }
     }
-    
+
     private func getText(_ text: String) {
         switch type {
         case .letters:
