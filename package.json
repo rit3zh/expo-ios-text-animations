@@ -1,6 +1,6 @@
 {
   "name": "expo-ios-text-animations",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "✨ Native SwiftUI-powered animated text view for React Native (Expo). Supports smooth, customizable animations like typing, slide, blur, drop, twist, and more.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
