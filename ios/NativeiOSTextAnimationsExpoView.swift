@@ -5,16 +5,16 @@ internal final class AnimatedTextViewProps: ExpoSwiftUI.ViewProps {
     @Field var text: String = "AnimateText"
     @Field var unitType: String = "letters"
     @Field var animationType: String = "opacity"
-    @Field var animating: Bool = false // New boolean prop
-    @Field var fontSize: Double = 16.0 // New fontSize prop
-    @Field var fontColor: String = "#000000" // New fontColor prop
-    @Field var animationDuration: Double = 2.0 // New animationDuration prop
+    @Field var animating: Bool = false
+    @Field var fontSize: Double = 16.0
+    @Field var fontColor: String = "#000000"
+    @Field var animationDuration: Double = 2.0
 }
 
 struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
     @ObservedObject var props: AnimatedTextViewProps
     @State private var animatedText: String = ""
-    
+
     var body: some View {
         Group {
             switch props.animationType.lowercased() {
@@ -25,7 +25,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "blur":
                 AnimateText<ATBlurEffect>(
@@ -34,7 +34,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "bottomtop":
                 AnimateText<ATBottomTopEffect>(
@@ -43,7 +43,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "offset":
                 AnimateText<ATOffsetEffect>(
@@ -52,7 +52,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "chain":
                 AnimateText<ATChainEffect>(
@@ -61,7 +61,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "drop":
                 AnimateText<ATDropEffect>(
@@ -70,7 +70,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "spring":
                 AnimateText<ATSpringEffect>(
@@ -79,7 +79,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "typo":
                 AnimateText<ATTypoEffect>(
@@ -88,7 +88,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "chimebell":
                 AnimateText<ATChimeBellEffect>(
@@ -97,7 +97,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "curtain":
                 AnimateText<ATCurtainEffect>(
@@ -106,7 +106,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "hang":
                 AnimateText<ATHangEffect>(
@@ -115,7 +115,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "paper":
                 AnimateText<ATPaperEffect>(
@@ -124,7 +124,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "randomtypo":
                 AnimateText<ATRandomTypoEffect>(
@@ -133,7 +133,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "twist":
                 AnimateText<ATTwistEffect>(
@@ -142,7 +142,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "rotate":
                 AnimateText<ATRotateEffect>(
@@ -151,7 +151,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "scale":
                 AnimateText<ATScaleEffect>(
@@ -160,7 +160,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "slide":
                 AnimateText<ATSlideEffect>(
@@ -169,7 +169,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             case "topbottom":
                 AnimateText<ATTopBottomEffect>(
@@ -178,9 +178,8 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
-                
             default:
                 AnimateText<ATOpacityEffect>(
                     $animatedText,
@@ -188,7 +187,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
-                    animationDuration: props.animationDuration,
+                    animationDuration: props.animationDuration
                 )
             }
         }
@@ -199,7 +198,6 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
             animatedText = newText
         }
         .onChange(of: props.animationType) { _ in
-            // Force animation restart when animation type changes
             animatedText = ""
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                 animatedText = props.text
@@ -215,11 +213,11 @@ extension Color {
         Scanner(string: hex).scanHexInt64(&int)
         let a, r, g, b: UInt64
         switch hex.count {
-        case 3: // RGB (12-bit)
+        case 3:
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6: // RGB (24-bit)
+        case 6:
             (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8: // ARGB (32-bit)
+        case 8:
             (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         default:
             (a, r, g, b) = (1, 1, 1, 0)
