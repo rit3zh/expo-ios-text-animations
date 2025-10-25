@@ -15,6 +15,7 @@ const AnimatedTextView: React.FC<AnimatedTextViewProps> &
       unitType={props.unit}
       fontColor={props.fontColor}
       animationDuration={54.5}
+      fontWeight={props.fontWeight}
       style={
         props.style ?? {
           width: 100,

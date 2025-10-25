@@ -8,6 +8,7 @@ internal final class AnimatedTextViewProps: ExpoSwiftUI.ViewProps {
     @Field var animating: Bool = false
     @Field var fontSize: Double = 16.0
     @Field var fontColor: String = "#000000"
+    @Field var fontWeight: String = "regular"
     @Field var animationDuration: Double = 2.0
 }
 
@@ -25,6 +26,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "blur":
@@ -34,6 +36,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "bottomtop":
@@ -43,6 +46,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "offset":
@@ -52,6 +56,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "chain":
@@ -61,6 +66,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "drop":
@@ -70,6 +76,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "spring":
@@ -79,6 +86,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "typo":
@@ -88,6 +96,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "chimebell":
@@ -97,6 +106,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "curtain":
@@ -106,6 +116,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "hang":
@@ -115,6 +126,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "paper":
@@ -124,6 +136,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "randomtypo":
@@ -133,6 +146,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "twist":
@@ -142,6 +156,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "rotate":
@@ -151,6 +166,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "scale":
@@ -160,6 +176,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "slide":
@@ -169,6 +186,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             case "topbottom":
@@ -178,6 +196,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             default:
@@ -187,6 +206,7 @@ struct ExpoAnimateTextView: ExpoSwiftUI.WithHostingView, ExpoSwiftUIView {
                     animating: props.animating,
                     fontSize: props.fontSize,
                     textColor: Color(hex: props.fontColor),
+                    fontWeight: getFontWeight(from: props.fontWeight),
                     animationDuration: props.animationDuration
                 )
             }

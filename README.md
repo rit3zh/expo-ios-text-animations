@@ -77,6 +77,7 @@ export default function App() {
 | `unit`              | `AnimationUnitType`    | —       | Split text by `"words"` or `"letters"` |
 | `fontSize`          | `number`               | `24`    | Text font size                         |
 | `fontColor`         | `string`               | `#000`  | Text color                             |
+| `fontWeight`        | `string`               | `"regular"` | Font weight: `"thin"`, `"light"`, `"regular"`, `"medium"`, `"semibold"`, `"bold"`, `"heavy"`, `"black"` |
 | `animationDuration` | `number`               | `2`     | Duration in seconds                    |
 | `animating`         | `boolean`              | `true`  | Whether animation is active            |
 | `style`             | `StyleProp<ViewStyle>` | —       | Container style                        |

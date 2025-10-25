@@ -7,6 +7,7 @@ export interface NativeiOSTextAnimationsExpoModuleProps {
   fontSize?: number;
   animating?: boolean;
   fontColor?: string;
+  fontWeight?: string;
   animationDuration?: number;
 }
 export interface AnimatedTextViewProps {
@@ -17,6 +18,7 @@ export interface AnimatedTextViewProps {
   unit?: string;
   animating?: boolean;
   fontColor?: string;
+  fontWeight?: string;
   animationDuration?: number;
 }
 
