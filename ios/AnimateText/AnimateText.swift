@@ -9,6 +9,7 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
     var animating: Bool = false
     var fontSize: Double? = 16.0
     var textColor: Color = .black
+    var fontWeight: Font.Weight = .regular
     var animationDuration: Double = 2.0
 
 
@@ -27,13 +28,14 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
 
 
 
-    public init(_ text: Binding<String>, type: ATUnitType = .letters, userInfo: Any? = nil, animating: Bool = false, fontSize: Double = 16.0, textColor: Color = .black, animationDuration: Double = 2.0) {
+    public init(_ text: Binding<String>, type: ATUnitType = .letters, userInfo: Any? = nil, animating: Bool = false, fontSize: Double = 16.0, textColor: Color = .black, fontWeight: Font.Weight = .regular, animationDuration: Double = 2.0) {
         _text = text
         self.type = type
         self.userInfo = userInfo
         self.animating = animating
         self.fontSize = fontSize
         self.textColor = textColor
+        self.fontWeight = fontWeight
         self.animationDuration = animationDuration
     }
 
@@ -41,9 +43,10 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
         ZStack(alignment: .leading) {
             if !isChanged {
                 Text(text)
-                    .font(.system(size: fontSize ?? 16.0))
+                    .font(.system(size: fontSize ?? 16.0, weight: fontWeight))
                     .lineLimit(1)
-                    .takeSize($size).foregroundStyle(textColor)
+                    .takeSize($size)
+                    .foregroundStyle(textColor)
             } else {
                 HStack(spacing: 0) {
                     ForEach(Array(elements.enumerated()), id: \.offset) { index, element in
@@ -54,9 +57,9 @@ public struct AnimateText<E: ATTextAnimateEffect>: View {
                                                  value: value,
                                                  size: size)
                         if toggle {
-                            Text(element).font(.system(size: fontSize ?? 16.0)).modifier(E(data, userInfo)).foregroundStyle(textColor)
+                            Text(element).font(.system(size: fontSize ?? 16.0, weight: fontWeight)).modifier(E(data, userInfo)).foregroundStyle(textColor)
                         } else {
-                            Text(element).font(.system(size: fontSize ?? 16.0)).modifier(E(data, userInfo)).foregroundStyle(textColor)
+                            Text(element).font(.system(size: fontSize ?? 16.0, weight: fontWeight)).modifier(E(data, userInfo)).foregroundStyle(textColor)
                         }
                     }
                 }
